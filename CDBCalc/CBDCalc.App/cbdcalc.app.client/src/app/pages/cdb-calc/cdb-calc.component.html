@@ -1,0 +1,20 @@
+<h2>Cálculo de CDB</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="valorInicial">Valor Inicial:</label>
+    <input type="number" id="valorInicial" [(ngModel)]="valorInicial" name="valorInicial" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="prazo">Prazo (meses):</label>
+    <input type="number" id="prazo" [(ngModel)]="prazo" name="prazo" class="form-control" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-3">Calcular</button>
+</form>
+
+<div *ngIf="resultado" class="mt-4">
+  <p><strong>Valor Bruto:</strong> {{ resultado.valorBruto | currency }}</p>
+  <p><strong>Valor Líquido:</strong> {{ resultado.valorLiquido | currency }}</p>
+</div>
